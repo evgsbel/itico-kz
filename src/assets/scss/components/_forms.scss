@@ -1,0 +1,129 @@
+.form {
+  &__heading {
+    padding: 40px 20px 20px;
+    font-size: 36px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: rgba(226, 66, 48, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.60);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    border-radius: 20px 20px 0 0;
+  }
+  &__body {
+    padding: 20px 40px 35px;
+    background-color: rgba(255, 255, 255, 0.40);
+    border: 1px solid rgba(255, 255, 255, 0.60);
+    backdrop-filter: blur(10px);
+    border-radius: 0 0 20px 20px;
+  }
+  &__caption {
+    color: #253E5B;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  &__label {
+    display: block;
+    margin-bottom: 20px;
+  }
+  &__input {
+    width: 100%;
+    border: 2px solid #fff;
+    color: #fff;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 50px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    &::placeholder {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+  &__submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 0;
+    background-color: #fff;
+    text-transform: uppercase;
+    width: 230px;
+    height: 50px;
+    color: #212E33;
+    border-radius: 50px;
+    transition: color $trns, background-color $trns;
+    &:hover {
+      background-color: $orange;
+      color: #fff;
+    }
+  }
+}
+
+.checkbox {
+
+  &__label {
+    position: relative;
+    display: block;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    a {
+      text-decoration: underline;
+      &:hover {
+        color: $orange;
+      }
+    }
+    @include r(576) {
+      display: flex;
+      flex-direction: column;
+      padding-left: 0;
+    }
+  }
+
+  &__label:last-child {
+    margin-bottom: 0;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__input + &__pane {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    transition:  background-color .3s ease-in-out;
+    background-color: rgba(130, 162, 185, 0.5);
+  }
+
+  &__input + &__pane::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 11px;
+    height: 9px;
+    background-image: url("data:image/svg+xml,%3Csvg width='11' height='9' viewBox='0 0 11 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5.025L4.33333 8L10 1' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: opacity .3s ease-in-out;
+  }
+
+  &__input:checked + .checkbox__pane {
+    background-color: $orange;
+  }
+
+
+}

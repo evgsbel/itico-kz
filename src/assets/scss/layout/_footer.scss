@@ -1,0 +1,71 @@
+.footer {
+  padding: 70px 0 10px;
+  background-image: url('../img/footer-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  &__email {
+    display: block;
+    margin-left: auto;
+    color: $orange;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: right;
+    margin-top: 10px;
+    width: max-content;
+    &:hover {
+      color: #d61600;
+    }
+  }
+  &__nav {
+    padding-top: 10px;
+  }
+  &__info {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    list-style-type: disc;
+    li {
+      font-size: 15px;
+      line-height: 60px;
+    }
+  }
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 15px;
+    line-height: 60px;
+  }
+  &__dev {
+    a {
+      text-decoration: underline;
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+}
+.button-up {
+  position: fixed;
+  bottom: 120px;
+  right: 85px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.60);
+  background-color: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all $trns;
+  &.is-show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
