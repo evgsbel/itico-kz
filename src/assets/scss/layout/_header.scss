@@ -14,7 +14,7 @@
   &__row {
     align-items: baseline;
     @include r(1024) {
-
+      align-items: center;
     }
   }
   &__flex {
@@ -37,6 +37,9 @@
     margin: 0 auto;
     width: 100%;
     text-align: center;
+    svg {
+      width: 120px;
+    }
   }
   svg {
     fill: #fff;
@@ -64,7 +67,7 @@
     padding: 40px;
     width: 80vw;
     min-height: 100vh;
-    background-color: #13293E;
+    background-color: #2556A0;
     transform: translateX(-100%);
     transition: transform .5s ease-in-out;
   }
@@ -211,4 +214,8 @@
       font-weight: 900;
     }
   }
+}
+
+.modal-content {
+  background-color: #2556A0;
 }

@@ -17,8 +17,17 @@
       color: #d61600;
     }
   }
+  &__logo {
+    @include r(576) {
+      text-align: left;
+      margin: 0;
+    }
+  }
   &__nav {
     padding-top: 10px;
+    @include r(1024) {
+      display: none;
+    }
   }
   &__info {
     margin-left: 20px;
@@ -28,6 +37,9 @@
     li {
       font-size: 15px;
       line-height: 60px;
+      @include r(768) {
+        line-height: 1.5;
+      }
     }
   }
   &__bottom {
@@ -37,6 +49,11 @@
     color: #fff;
     font-size: 15px;
     line-height: 60px;
+    @include r(768) {
+      flex-direction: column;
+      line-height: 1.5;
+      gap: 15px 0;
+    }
   }
   &__dev {
     a {
@@ -59,11 +76,17 @@
   height: 70px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.60);
-  background-color: rgba(255, 255, 255, 0.10);
+  background-color: rgba(37,86,160,0.5);
   backdrop-filter: blur(10px);
   opacity: 0;
   visibility: hidden;
   transition: all $trns;
+  @include r(1024) {
+    width: 50px;
+    height: 50px;
+    right: 15px;
+    bottom: 40%;
+  }
   &.is-show {
     opacity: 1;
     visibility: visible;

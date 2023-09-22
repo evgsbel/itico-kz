@@ -65,8 +65,9 @@ ul {
   font-size: 32px;
   font-weight: 900;
   text-transform: uppercase;
-  @include r(960) {
-    font-size: 80px;
+  @include r(1024) {
+    font-size: 25px;
+    margin-bottom: 30px;
   }
 }
 

@@ -1,5 +1,8 @@
 .section {
   margin-bottom: 100px;
+  @include r(768) {
+    margin-bottom: 50px;
+  }
 }
 .hero {
   position: relative;
@@ -7,20 +10,18 @@
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
-  &__big-text {
-    font-size: 200px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: uppercase;
-    color: #fff;
-  }
   &__title {
     font-weight: 700;
     font-size: 34px;
     line-height: 1.5;
     margin-bottom: 15px;
     color: #fff;
+    @include r(1280) {
+      font-size: 28px;
+    }
+    @include r(576) {
+      font-size: 20px;
+    }
   }
   &__text {
     margin-bottom: 50px;
@@ -28,6 +29,12 @@
     font-weight: 300;
     line-height: 1.2;
     color: #fff;
+    @include r(1280) {
+      font-size: 28px;
+    }
+    @include r(576) {
+      font-size: 20px;
+    }
   }
   &__btn {
     width: 190px;
@@ -46,6 +53,12 @@
       justify-content: space-between;
       width: 100%;
       z-index: 100;
+      @include r(1440) {
+        justify-content: flex-end;
+        gap: 0 15px;
+        top: calc(100% - 100px);
+        right: 15px;
+      }
     }
     &--button {
       display: flex;
@@ -57,12 +70,22 @@
       background: rgba(255, 255, 255, 0.40);
       backdrop-filter: blur(10px);
       border-radius: 50%;
+      @include r(1280) {
+        width: 50px;
+        height: 50px;
+      }
     }
     &--button-prev {
       margin-left: 100px;
+      @include r(1280) {
+        margin: 0;
+      }
     }
     &--button-next {
       margin-right: 100px;
+      @include r(1280) {
+        margin: 0;
+      }
     }
   }
   &__mouse {
@@ -79,6 +102,9 @@
     display: flex;
     justify-content: center;
     gap: 50px;
+    @include r(1024) {
+      flex-wrap: wrap;
+    }
   }
   &__item {
     position: relative;
@@ -93,12 +119,17 @@
     box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.10);
     text-align: center;
     border-radius: 20px;
+    @include r(1024) {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
   }
   &__img {
     display: flex;
     align-items: center;
     margin-bottom: 30px;
     min-height: 155px;
+    max-width: 90%;
   }
   &__caption {
     font-size: 24px;
@@ -134,6 +165,9 @@
   }
   &__big-mb {
     margin-bottom: 100px;
+    @include r(1024) {
+      margin-bottom: 30px;
+    }
   }
   img {
     border-radius: 20px;
@@ -142,6 +176,10 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    @include r(1024) {
+      flex-direction: column;
+      gap: 30px 0;
+    }
   }
 }
 
@@ -154,18 +192,33 @@
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+  padding-bottom: 20px;
   &__caption {
     font-weight: 700;
     font-size: 34px;
     line-height: 50px;
     color: #fff;
     margin-bottom: 20px;
+     @include r(1280) {
+      font-size: 28px;
+    }
+    @include r(1024) {
+      font-size: 20px;
+      line-height: 1.5;
+    }
   }
   &__description {
     color: #fff;
     font-size: 34px;
     line-height: 50px;
     font-weight: 300;
+     @include r(1280) {
+      font-size: 28px;
+    }
+    @include r(1024) {
+      font-size: 20px;
+      line-height: 1.5;
+    }
   }
 }
 
@@ -176,6 +229,9 @@
     justify-content: center;
     gap: 50px;
     flex-wrap: wrap;
+    @include r(768) {
+      flex-direction: column;
+    }
   }
   &__item {
     flex: 0 0 25%;
@@ -207,6 +263,10 @@
     text-align: center;
     color: #778397;
     max-width: 55%;
+    @include r(768) {
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
     b {
       font-weight: 700;
     }
@@ -215,6 +275,15 @@
     display: flex;
     justify-content: space-between;
     gap: 30px 110px;
+    @include r(1440) {
+      gap: 0 15px;
+    }
+    @include r(1024) {
+      flex-direction: column;
+      gap: 50px 0;
+      justify-content: center;
+      align-items: center;
+    }
   }
   &__item {
     position: relative;
@@ -222,6 +291,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @include r(1440) {
+      flex: 0 0 30%;
+    }
+    @include r(1024) {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
     &::before {
       content: '';
       position: absolute;
@@ -230,9 +307,29 @@
       width: 1px;
       height: 100%;
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #2556A0 51.04%, rgba(255, 255, 255, 0.00) 100%);
+      @include r(1440) {
+        left: -30px;
+      }
+      @include r(1024) {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: 105%;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.00) 0%, #2556A0 51.04%, rgba(255, 255, 255, 0.00) 100%);
+      }
     }
     &:first-child::before {
       content: none;
+      @include r(1024) {
+        content: '';
+      }
+    }
+    &:last-child::before {
+      @include r(1024) {
+        content: none;
+      }
     }
   }
   &__caption {
@@ -251,4 +348,16 @@
     width: 190px;
     height: 50px;
   }
+}
+
+.apix-logo-text {
+  font-family: 'HalyardMicroBold', sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  color: #778397;
+  text-transform: uppercase;
+  text-align: center;
+}
+.content p.apix-logo-text {
+  margin-bottom: 50px;
 }

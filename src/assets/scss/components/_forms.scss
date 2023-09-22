@@ -10,6 +10,14 @@
     backdrop-filter: blur(10px);
     color: #fff;
     border-radius: 20px 20px 0 0;
+    @include r(1024) {
+      font-size: 30px;
+      padding: 30px 10px 10px;
+    }
+    @include r(576) {
+      font-size: 22px;
+      padding-top: 20px;
+    }
   }
   &__body {
     padding: 20px 40px 35px;
@@ -17,6 +25,9 @@
     border: 1px solid rgba(255, 255, 255, 0.60);
     backdrop-filter: blur(10px);
     border-radius: 0 0 20px 20px;
+    @include r(1024) {
+      padding: 20px 30px 30px;
+    }
   }
   &__caption {
     color: #253E5B;
@@ -73,6 +84,9 @@
     cursor: pointer;
     font-size: 14px;
     color: #fff;
+    @include r(576) {
+      line-height: 1;
+    }
     a {
       text-decoration: underline;
       &:hover {
@@ -80,9 +94,7 @@
       }
     }
     @include r(576) {
-      display: flex;
-      flex-direction: column;
-      padding-left: 0;
+
     }
   }
 
